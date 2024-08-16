@@ -4,6 +4,7 @@ import (
 	"database/sql"
 
 	"github.com/Desgue/blog-tutorials/todo-api/domain"
+	_ "github.com/lib/pq"
 )
 
 type TodoRepository struct {
