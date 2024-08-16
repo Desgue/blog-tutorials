@@ -2,7 +2,7 @@
 
 
 ```bash
-go-todo-api/
+todo-api/
 │
 ├── main.go
 ├── domain/
