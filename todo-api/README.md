@@ -48,32 +48,32 @@ docker run -d --name todo-db -p 5432:5432 todo-postgres
 
 Use uma ferramenta como cURL ou Postman para testar os endpoints:
 
-    * Criar um Todo:
+**Criar um Todo**:
 
-        ```bash
-        curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"title":"Learn Go","description":"Study Go programming"}'
-        ```
+```bash
+curl -X POST http://localhost:8080/todos -H "Content-Type: application/json" -d '{"title":"Learn Go","description":"Study Go programming"}'
+```
 
-    * Obter todos os Todos:
+**Obter todos os Todos**:
 
-        ```bash
-        curl http://localhost:8080/todos
-        ```
+```bash
+curl http://localhost:8080/todos
+```
 
-    * Obter um Todo específico:
+**Obter um Todo específico**:
 
-        ```bash
-        curl http://localhost:8080/todos/1
-        ```
+```bash
+curl http://localhost:8080/todos/1
+```
 
-    * Atualizar um Todo:
+**Atualizar um Todo**:
 
-        ```bash
-        curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d '{"title":"Learn Go","description":"Study Go programming","completed":true}'
-        ```
+```bash
+curl -X PUT http://localhost:8080/todos/1 -H "Content-Type: application/json" -d '{"title":"Learn Go","description":"Study Go programming","completed":true}'
+```
 
-    * Deletar um Todo:
+**Deletar um Todo**:
 
-        ```bash
-        curl -X DELETE http://localhost:8080/todos/1
-        ```
+```bash
+curl -X DELETE http://localhost:8080/todos/1
+```
