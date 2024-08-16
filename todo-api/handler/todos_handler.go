@@ -25,13 +25,14 @@ func (h *TodoHandler) CreateTodo(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := h.repo.Create(&todo); err != nil {
+	createdTodo, err := h.repo.Create(todo)
+	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 	w.WriteHeader(http.StatusCreated)
-	json.NewEncoder(w).Encode(todo)
+	json.NewEncoder(w).Encode(createdTodo)
 }
 
 func (h *TodoHandler) GetTodo(w http.ResponseWriter, r *http.Request) {
@@ -66,12 +67,13 @@ func (h *TodoHandler) UpdateTodo(w http.ResponseWriter, r *http.Request) {
 	}
 	todo.Id = id
 
-	if err := h.repo.Update(&todo); err != nil {
+	updatedTodo, err := h.repo.Update(todo)
+	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	json.NewEncoder(w).Encode(todo)
+	json.NewEncoder(w).Encode(updatedTodo)
 }
 
 func (h *TodoHandler) DeleteTodo(w http.ResponseWriter, r *http.Request) {
