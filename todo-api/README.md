@@ -1,6 +1,5 @@
 ## Estrutura do Projeto
 
-Crie a seguinte estrutura de diretórios:
 
 ```bash
 go-todo-api/
